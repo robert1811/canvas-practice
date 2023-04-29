@@ -17,11 +17,11 @@
                     <p>Reset</p>
                 </div>
                 <div onclick="undoAction()">
-                    <i class="fa-solid fa-rotate-left changes-btn" title="undo" id="undo"></i>
+                    <i class="fa-solid fa-rotate-left changes-btn" id="undo"></i>
                     <p>Undo</p>
                 </div>
                 <div onclick="redoAction()">
-                    <i class="fa-solid fa-rotate-right changes-btn" title="undo" id="redo" ></i>
+                    <i class="fa-solid fa-rotate-right changes-btn" id="redo" ></i>
                     <p>Redo</p>
                 </div>
             </div>
@@ -30,12 +30,12 @@
             </div>
             <div id="color-pallete">
                 <div id="colors">
-                    <div class="color" style="background-color: black;" title="black"></div>
-                    <div class="color" style="background-color: white;" title="white"></div>
-                    <div class="color" style="background-color: rgb(136, 136, 136);" title="gray"></div>
-                    <div class="color" style="background-color: rgb(179, 33, 33);" title="red"></div>
-                    <div class="color" style="background-color: rgb(37, 37, 156);" title="blue"></div>
-                    <div class="color" style="background-color: rgb(233, 233, 101);" title="yellow"></div>
+                    <div class="color" style="background-color: #000000;" title="black"></div>
+                    <div class="color" style="background-color: #ffffff;" title="white"></div>
+                    <div class="color" style="background-color: #7c7c7c;" title="gray"></div>
+                    <div class="color" style="background-color: #be4343;" title="red"></div>
+                    <div class="color" style="background-color: #4443b6;" title="blue"></div>
+                    <div class="color" style="background-color: #d7da40;" title="yellow"></div>
                     <div class="color" style="background-color: rgb(196, 132, 35);" title="orange"></div>
                     <div class="color" style="background-color: rgb(12, 112, 12);" title="green"></div>
                     <div class="color" style="background-color: rgb(31, 177, 177);" title="cyan"></div>
@@ -50,6 +50,12 @@
                     <div class="color" style="background-color: none" title=""></div>
                 </div>
                 <p>Colors</p>
+            </div>
+            <div>
+                <div id="primary-color-container">
+                    <input type="color" value="#000000" id="color-picker">
+                    <div id="primary-color"></div>
+                </div>
             </div>
         </nav>
     </header>

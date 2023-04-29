@@ -1,5 +1,5 @@
 :root {
-    --border-color: rgb(190, 190, 209);
+    --border-color: rgb(145, 145, 148);
     --standard-weight: 3px
 }
 
@@ -130,4 +130,33 @@ nav p {
 
 #drawing-actions div:hover {
     background-color: rgb(205, 229, 236);
+}
+
+#color-picker {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#primary-color-container {
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+
+#primary-color-container * {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#primary-color {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    pointer-events: none;
+    z-index: 2000;
+    position: absolute;
+    border: var(--border-color) solid 2px;
 }

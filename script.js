@@ -1,4 +1,3 @@
-console.log('holaaaaa');
 const mainCanvas = document.getElementById('main-canvas');
 const context = mainCanvas.getContext('2d');
 
@@ -10,6 +9,12 @@ let lineWidth = 10
 
 let undo = [context.getImageData(0,0, mainCanvas.width, mainCanvas.height)]
 let redo = []
+
+const colorPicker = document.getElementById('color-picker')
+const colors = document.getElementsByClassName('color')
+const widthInterface = document.getElementById('width')
+const circle = document.getElementById('circle')
+const primaryColorElement = document.getElementById('primary-color')
 
 const updateCircleState = () => {
     circle.style.height = lineWidth + 'px'
@@ -66,7 +71,7 @@ const reset = () => {
 
 let lastY;
 let lastX
-const circle = document.getElementById('circle')
+
 const cursorCircle = e => {
     lastY = e.pageY
     lastX = e.pageX
@@ -74,9 +79,18 @@ const cursorCircle = e => {
     circle.style.display = 'block'
 }
 
+const inputColorHandler = e => {
+    const newColor = e.target.value
+    primaryColorElement.style.backgroundColor = newColor
+    drawColor = newColor
+    updateCircleState()
+}
+
 document.addEventListener('click', () => {
     updateCircleState()
 })
+
+colorPicker.addEventListener('change', inputColorHandler)
 
 mainCanvas.addEventListener('click', () => {
     undo.push(context.getImageData(0,0, mainCanvas.width, mainCanvas.height))
@@ -84,9 +98,11 @@ mainCanvas.addEventListener('click', () => {
 })
 
 mainCanvas.addEventListener("mousedown", mouseDown);
+
 mainCanvas.addEventListener('mouseup', e => {
     mainCanvas.removeEventListener('mousemove', mouseMoving)
 })
+
 mainCanvas.addEventListener('mouseleave', e => {
     mainCanvas.removeEventListener('mousedown', mouseDown)
     mainCanvas.removeEventListener('mousemove', mouseMoving)
@@ -102,10 +118,9 @@ document.addEventListener('mousemove', e => {
     else circle.style.display = 'none'
 })
 
-const colors = document.getElementsByClassName('color')
-const widthInterface = document.getElementById('width')
 const selectColor = e => {
     drawColor = e.currentTarget.style.backgroundColor
+    primaryColorElement.style.backgroundColor = drawColor
 }
 
 for(let color of colors) {
