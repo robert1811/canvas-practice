@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Paint 2</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="drawing-actions">
+                <div onclick="reset()">
+                    <i class="fa-regular fa-file"></i>
+                    <p>Reset</p>
+                </div>
+                <div onclick="undoAction()">
+                    <i class="fa-solid fa-rotate-left changes-btn" title="undo" id="undo"></i>
+                    <p>Undo</p>
+                </div>
+                <div onclick="redoAction()">
+                    <i class="fa-solid fa-rotate-right changes-btn" title="undo" id="redo" ></i>
+                    <p>Redo</p>
+                </div>
+            </div>
+            <div id="width">
+                <b>Size:</b> <span class="gray-text">10</span>
+            </div>
+            <div id="color-pallete">
+                <div id="colors">
+                    <div class="color" style="background-color: black;" title="black"></div>
+                    <div class="color" style="background-color: white;" title="white"></div>
+                    <div class="color" style="background-color: rgb(136, 136, 136);" title="gray"></div>
+                    <div class="color" style="background-color: rgb(179, 33, 33);" title="red"></div>
+                    <div class="color" style="background-color: rgb(37, 37, 156);" title="blue"></div>
+                    <div class="color" style="background-color: rgb(233, 233, 101);" title="yellow"></div>
+                    <div class="color" style="background-color: rgb(196, 132, 35);" title="orange"></div>
+                    <div class="color" style="background-color: rgb(12, 112, 12);" title="green"></div>
+                    <div class="color" style="background-color: rgb(31, 177, 177);" title="cyan"></div>
+                    <div class="color" style="background-color: rgb(180, 70, 162);" title="pink"></div>
+                    <div class="color" style="background-color: rgb(94, 51, 23);" title="brown"></div>
+                    <div class="color" style="background-color: purple;" title=""></div>
+                    <div class="color" style="background-color: rgb(128, 0, 11);" title="purple"></div>
+                    <div class="color" style="background-color: none" title=""></div>
+                    <div class="color" style="background-color: none" title=""></div>
+                    <div class="color" style="background-color: none" title=""></div>
+                    <div class="color" style="background-color: none" title=""></div>
+                    <div class="color" style="background-color: none" title=""></div>
+                </div>
+                <p>Colors</p>
+            </div>
+        </nav>
+    </header>
+    <main class="main-container">
+        <canvas id="main-canvas" width="900" height="900"></canvas>
+        <div id="circle" style="top: 0; left: 0; background-color: black; width: 10px; height: 10px; display: none;"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
